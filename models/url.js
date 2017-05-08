@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const CounterSchema = Schema({
+const counter = mongoose.model('counter', new Schema({
     _id: {
         type: String,
         required: true
@@ -10,9 +10,7 @@ const CounterSchema = Schema({
         type: Number,
         default: 0
     }
-});
-
-const counter = mongoose.model('counter', CounterSchema);
+}));
 
 const urlSchema = new Schema({
     _id: {
